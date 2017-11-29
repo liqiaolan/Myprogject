@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{CSS_URL}/bootstrap.css">
+    <link rel="stylesheet" href="{ICONFONT_URL}/iconfont.css">
+    <title>文章列表页</title>
+    <style>
+        .list{
+            margin-left:40px;
+            margin-top:20px;
+        }
+        .write{
+            text-decoration: none;
+            border:1px solid #ea6f5a;
+            border-radius: 30px;
+            padding:8px 12px;
+        }
+        .write:hover{
+            text-decoration: none;
+        }
+        .lists{
+            margin-top:30px;
+        }
+        li{
+            list-style: none;
+            font-size:18px;
+            margin-bottom: 10px;
+        }
+        li>a{
+            color:#333;
+            text-decoration: none;
+        }
+        li>a:hover{
+            text-decoration: none;
+        }
+        .glyphicon-grain{
+            color:#ea6f5a;
+        }
+        .lists>li>span>a{
+            font-size:18px;
+            text-decoration: none;
+        }
+        .lists>li>span>a:hover{
+             color:#333;
+        }
+        .lists>li>span{
+            margin-left:20px;
+        }
+    </style>
+</head>
+<body>
+   <section class="list">
+       <p>
+
+           <a href="index.php?m=index&f=article&a=write&cid={$cid}" class="write">
+               <span class="glyphicon glyphicon-plus" style="color:#ea6f5a"></span>
+               <span style="font-size:16px; color:#000;margin-left:10px;">新建文章</span>
+           </a>
+       </p>
+       <ul class="lists">
+           {if count($data)>0 }
+               {foreach  $data as $v}
+               <li>
+                   <a href="">
+                       <span class="glyphicon glyphicon-grain"></span>
+                       <span style="margin-right:20px;">{$v['contitle']}</span>
+                       <span>{$v['condate']}</span>
+                   </a>
+                   <span>
+                       <a href="index.php?m=index&f=article&a=delarticle&conid={$v['conid']}&cid={$cid}" class="iconfont icon-shanchu" style="margin-right:10px;"></a>
+                       <a href="index.php?m=index&f=article&a=editarticle&conid={$v['conid']}&cid={$cid}" class="iconfont icon-iconfontpencil"></a>
+                   </span>
+               </li>
+               {/foreach}
+           {else}
+             <li>没有内容，添加几篇吧！</li>
+           {/if}
+
+       </ul>
+   </section>
+
+</body>
+</html>

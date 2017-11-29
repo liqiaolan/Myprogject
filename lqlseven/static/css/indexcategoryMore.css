@@ -1,0 +1,138 @@
+@import "personal.css";
+@import "indexheader.css";
+*{
+    margin:0;
+    padding:0;
+    list-style:none;
+    text-decoration: none;
+}
+main{
+    width:1140px;
+    height:auto;
+    margin:0 auto;
+}
+.content{
+    width:100%;
+    height:auto;
+    margin-top:98px;
+}
+/*标题*/
+.storeTitle{
+    width:96%;
+    height:140px;
+    border-radius:4px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    font-size:40px;
+    color:#ea6f5a;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding:0 70% 0 0px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    margin:0 auto;
+}
+.storeTitle .iconfont{
+    font-size:60px;
+}
+/*contentBottom*/
+.contentBottom>ul{
+    width:100%;
+    height:auto;
+    overflow: hidden;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-content:space-between ;
+    margin-top:20px;
+}
+.contentBottom>ul>li{
+    width:30%;
+    height:360px;
+    padding:10px 20px 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.modules{
+    width:100%;
+    height:80%;
+    padding: 0 20px;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    position:relative;
+    background:hsla(0,0%,71%,.1);
+}
+.modules:hover{
+    box-shadow:0px 0px 3px 1px  rgba(0,0,0,0.1);
+    transition: 0.5s;
+}
+.modules img{
+    width:80px;
+    height:80px;
+    border-radius: 8px;
+    position: absolute;
+    left:50%;
+    top:-40px;
+    transform: translateX(-50%);
+}
+.modules>p:first-of-type{
+    width: 100%;
+    font-size: 22px;
+    font-weight: 700;
+    color:#333;
+    margin-top:60px;
+    text-align: center;
+}
+.modules>p:nth-of-type(2){
+    width: 100%;
+    font-size: 14px;
+    color:#333;
+    margin-top:10px;
+    text-align: center;
+    line-height: 26px;
+}
+.GZ{
+   display: flex;
+   justify-content: center;
+    align-items: center;
+    margin:10px 0;
+}
+.GZ>a{
+    display: block;
+    padding: 8px 0;
+    width: 90px;
+    border-radius: 40px;
+    background:#ea6f5a;
+    text-align: center;
+    color:#fff;
+}
+.modules>p:last-of-type{
+    width: 100%;
+    font-size: 14px;
+    color:#333;
+    margin-top:10px;
+    text-align: center;
+    line-height: 26px;
+}
+/*footer开始*/
+footer{
+    width:70%;
+    margin:60px auto 60px;
+}
+footer p{
+    width:80%;
+    height:auto;
+    margin-top:20px;
+    font-size:14px;
+    color:#888;
+    text-align: center;
+}
+/*footer结束*/

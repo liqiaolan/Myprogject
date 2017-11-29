@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{ICONFONT_URL}/iconfont.css">
+    <link rel="stylesheet" href="{CSS_URL}/indexcategory.css">
+    <title>分类页</title>
+</head>
+<body>
+{include file=$header}
+    <!--thematic开始-->
+    <section class="thematic">
+        <main>
+            <div class="left">
+                <div class="leftTop">
+                    <img src="{IMG_URL}/{$data['cimg']}.png" alt="{$data['cname']}" style="border:1px solid #f0f0f0">
+                    <div class="topmiddle">
+                       <p>{$data['cname']}</p>
+                        <p>收录了<span>{$connum}</span>篇文章 · 谢谢阅览</p>
+                    </div>
+                    <div class="topright">
+                        {if $indexuname}
+                        <a href="index.php?m=index&f=article&a=articaleCheck"><p>投稿</p></a>
+                        {else}
+                        <a href="index.php?m=index&f=login&a=init"><p>投稿</p></a>
+                        {/if}
+                        <a href="javascript:;"><p>
+                            <span class="iconfont icon-zengjia2"></span>&nbsp;欢迎</p></a>
+                    </div>
+                </div>
+                {foreach $lists as $v}
+                <div class="leftBottom">
+                    <div class="leavemessage">
+                        <div class="ltitle">
+                            <a href="index.php?m=index&f=content&a=init&conid={$v['conid']}">{$v['contitle']}</a>
+                            <div class="ltime">
+                                <div class="ltimeti">{$v['condate']|date_format:'%Y-%m-%d'}</div>
+                            </div>
+                        </div>
+                        <div class="lcon">
+                            <a href="index.php?m=index&f=content&a=init&conid={$v['conid']}" style="display: block;">
+                                <div class="limg" style="background-image:url('{$v["conthumb"]}')"></div>
+                            </a>
+
+                            <div class="lcontent">
+                                {{$v["content"]}|strip_tags|truncate:170:"...":true}
+                            </div>
+                         <div class="lmore"><a href="index.php?m=index&f=content&a=init&conid={$v['conid']}">阅读全文</a></div>
+                        </div>
+                        <div class="lfooter">
+                            <a href="index.php?m=index&f=index&a=author&uid={$v['uid']}">
+                                <span>作者:&nbsp;&nbsp;{$v['uname']}</span>
+                            </a>
+                            <a href="">
+                                <span class="iconfont icon-liulan"></span>
+                                {$v['hnum']}
+                            </a>
+                            <a href="">
+                                <span class="iconfont icon-dianzan"></span>
+                                {$v['glikeNum']}
+                            </a>
+                            <a href="">
+                                <span class="iconfont icon-shoucangC"></span>
+                                {$v['storeNum']}
+                            </a>
+                            <a href="">
+                                <span class="iconfont icon-huifu"></span>
+                                {$v['mnum']}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {/foreach}
+            </div>
+            <div class="right">
+               <div class="rightTop">
+                   <p>专题公告</p>
+                   <p style="margin-bottom: 10px;">{$data['cinfo']}</p>
+                   <p>投稿须知：</p>
+                   <p>读书专题仅收录与读书有关的书评、读书笔记、阅读方法、读书清单等文章。
+                       文中不得出现非简书的链接；包括但不限于公众号、二维码、头条号、微博、一点资源等带有广告性质的信息；配图不能带有水印。
+                       文章收录字数1000字起（大神请忽略此限制），请不要直接摘抄原文的话就来投稿。
+                       请注意排版美观、请不要密集投稿。
+                       如有关于文章的收录问题请私信【许境一】，主编个人首页： </p>
+               </div>
+                <div class="rightMiddle">
+                        <span>分享到</span>
+                        <a href=""><img src="{IMG_URL}/qq.png" alt=""></a>
+                        <a href=""><img src="{IMG_URL}/weixin.png" alt=""></a>
+                        <a href=""><img src="{IMG_URL}/weibo.png" alt=""></a>
+                        <a href=""><img src="{IMG_URL}/qqkj.png" alt=""></a>
+                </div>
+            </div>
+        </main>
+    </section>
+    <!--thematic结束-->
+    <!--footer开始-->
+    <footer>
+        <main>
+            <p>
+                ©2016-2017 山西朔州爱因特有限公司 / 简书 / 晋ICP备11018329号-5 / 晋公网安备31010402002252号
+            </p>
+            <p>晋公网安备31010402002252号 / 举报电话：021-34770013</p>
+        </main>
+    </footer>
+    <!--footer结束-->
+</body>
+</html>

@@ -1,0 +1,64 @@
+*{
+    margin:0;
+    padding:0;
+}
+.user{
+    width:100%;
+    height:40px;
+    color:#fff;
+    font-size:14px;
+    font-family:"微软雅黑";
+    text-align:right;
+    padding-top:18px;
+    vertical-align:14px;
+    line-height:40px;
+}
+.user img{
+    margin-left:20px;
+    float:right;
+}
+.user>span{
+    font-size:16px;
+    float:right;
+    margin-right:20px;
+   cursor:pointer;
+}
+.user>span:first-child{
+    margin-right:20px;
+    letter-spacing:2px;
+    float:left;
+    cursor:default;
+}
+.user>span:nth-child(2){
+    letter-spacing:1px;
+}
+.user>span:last-child{
+    margin-left:20px;
+    cursor:default;
+}
+.icon-love{
+    font-family: 'iconfont';
+    font-size:24px;
+}
+.user>a{
+    font-size:16px;
+    float:right;
+    margin-right:20px;
+    cursor:pointer;
+    font-family: '微软雅黑';
+    color:#fff;
+}
+.user>.login{
+    width:auto;
+    height:auto;
+    background:transparent;
+    font-size:16px;
+    float:right;
+    margin-right:20px;
+    cursor:pointer;
+    font-family: '微软雅黑';
+    color:#fff;
+}
+.user>.login:hover{
+    background:none
+}

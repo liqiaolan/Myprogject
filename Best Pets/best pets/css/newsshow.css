@@ -1,0 +1,101 @@
+*{
+    margin:0;
+    padding:0;
+}
+.ttitle{
+    width:100%;
+    height:160px;
+    font-size:40px;
+    color:#F44336;
+    text-align:center;
+    line-height:160px;
+    font-family:helvetica;
+}
+.content{
+    width:100%;
+    height:auto;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.contentcon{
+    width:50%;
+    height:auto;
+    font-size:20px;
+    font-family:Helvetica;
+    color:#626262;
+    font-weight:100;
+    line-height:26px;
+
+}
+.contentimg{
+    width:26%;
+    height:282px;
+    border:8px solid rgba(100,149,237,0.6);
+    background-size:cover;
+    border-radius:50%;
+    background-repeat:no-repeat;
+    backround-position:center center;
+    -webkit-box-sizing:border-box;
+    -mos-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    box-sizing:border-box;
+    text-align:center;
+    line-height:266px;
+    position:relative;
+}
+.contentmark{
+    width:100%;
+    height:282px;
+    border:8px solid rgba(100,149,237,0.6);
+    background-size:cover;
+    border-radius:50%;
+    background-repeat:no-repeat;
+    backround-position:center center;
+    -webkit-box-sizing:border-box;
+    -mos-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    box-sizing:border-box;
+    font-size:40px;
+    color:#fff;
+    line-height:266px;
+    text-align:center;
+    font-family:'微软雅黑';
+    letter-spacing: 1px;
+    opacity:0;
+}
+
+.contentimg:hover  .contentmark{
+    transform: scale(0.5);
+    transition:all 0.5s ease;
+    position:absolute;
+    top:0;
+    left:-50%;
+    opacity:1;
+}
+.Content{
+    margin-top:60px;
+    margin-bottom:40px;
+}
+.BA{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:60px;
+}
+.BA>a{
+    display:block;
+    width:50%;
+    overflow:hidden;
+    font-size:20px;
+    font-family: Helvetica;
+    color:#262626;
+    line-height:20px;
+}
+.BA>a>i{
+    font-style:normal;
+    color:#6495ED;
+    font-size:18px;
+}

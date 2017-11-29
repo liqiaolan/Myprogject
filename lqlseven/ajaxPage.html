@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="{JS_URL}/jquery-3.2.1.js"></script>
+    <title>Document</title>
+    <style>
+        th,td{
+            height: 70px;
+        }
+    </style>
+</head>
+<body>
+    <table class="table table-bordered">
+        <tr>
+            <th>lid</th>
+            <th>角色名称</th>
+        </tr>
+        {foreach $data as $v}
+        <tr>
+            <td>{$v["lid"]}</td>
+            <td>{$v["lname"]}</td>
+        </tr>
+        {/foreach}
+
+    </table>
+    <script>
+        $(function () {
+            var num=0;
+            var flag=true;
+            $(window).scroll(function () {
+                if($(window).scrollTop()>=$("table").outerHeight()-$(window).height()){
+                    if(!flag){
+                        return ;
+                    }
+                    flag=false;
+                    num++;
+                    $.ajax({
+                        url:"index.php?m=admin&f=admin&a=ajaxPage",
+                        data:{ page:num },
+                        type:"post",
+                        dataType:"json",
+                        success:function (e) {
+                            for(let i=0;i<e.length;i++){
+                                $("<tr><td>"+e[i].lid+"</td><td>"+e[i].lname+"</td></tr>").appendTo("tbody");
+                            }
+                            flag=true;
+                        }
+                    })
+                }
+            })
+        })
+    </script>
+</body>
+</html>

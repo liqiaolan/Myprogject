@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{ICONFONT_URL}/iconfont.css">
+    <link rel="stylesheet" href="{CSS_URL}/myarticale.css">
+    <script src="{JS_URL}/jquery-3.2.1.js"></script>
+    <script src="{JS_URL}/myarticale.js"></script>
+    <title>我的文章</title>
+</head>
+<body>
+{include file=$header}
+    <section class="content">
+        <main>
+            <ul class="articles">
+               <li>我的文章 <span>{count($lists)}</span></li>
+               <li>
+                   <span style="color:#ea6f5a;" class="asc">按时间正序</span>
+                   <span class="desc">按时间倒序</span>
+               </li>
+            </ul>
+            <ul class="Con">
+                {foreach $lists as $v}
+                <li>
+                    <div class="leavemessage">
+                        <div class="ltitle">
+                            <a href="">{$v['contitle']}</a>
+                            <div class="ltime">
+                                <div class="ltimeti">{$v['condate']|date_format:'%Y-%m-%d'}</div>
+                            </div>
+                        </div>
+                        <div class="lcon">
+                            <a href="index.php?m=index&f=content&a=init&conid={$v['conid']}" style="display: block;">
+                                <div class="limg" style="background-image:url('{$v["conthumb"]}')"></div>
+                            </a>
+
+                            <div class="lcontent">
+                                {{$v['content']}|strip_tags|truncate:170:"......":true}
+                            </div>
+                        <div class="lmore"><a href="index.php?m=index&f=content&a=init&conid={$v['conid']}">阅读文章</a></div>
+                        </div>
+                        <div class="lfooter">
+                            <a href="">
+                                <span>作者:&nbsp;&nbsp;{$indexuname}</span>
+                            </a>
+                            <a href="">
+                                <span class="iconfont icon-liulan"></span>
+                                {$v['hnum']}
+                            </a>
+                            <a href="">
+                                <span class="iconfont icon-dianzan"></span>
+                                {$v['glikeNum']}
+                            </a>
+                            <a href="">
+                                <span class="iconfont icon-shoucangC"></span>
+                                {$v['storeNum']}
+                            </a>
+                            <a href="">
+                                <span class="iconfont icon-huifu"></span>
+                                {$v['mnum']}
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                {/foreach}
+            </ul>
+        </main>
+    </section>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{CSS_URL}/indexcontent.css">
+    <link rel="stylesheet" href="{ICONFONT_URL}/iconfont.css">
+    <script src="{JS_URL}/jquery-3.2.1.js"></script>
+    <script src="{JS_URL}/indexcontent.js"></script>
+    <title>内容页</title>
+</head>
+<body conid="{$data[0]['conid']}" uid2="{$data[0]['uid']}">
+{include file=$header}
+<!--回复成功的提示-->
+<div class="success">
+    回复成功
+</div>
+<!--评论不能为空提示-->
+<div class="notice">
+    回复内容不能为空
+</div>
+   <!--content开始-->
+   <section class="con">
+       <main>
+           <div class="left">
+               <div class="title">{$data[0]['contitle']}</div>
+               <div class="author">
+                   <a href="index.php?m=index&f=index&a=author&uid={$data[0]['uid']}"}><img src="{IMG_URL}/banner3.jpg" alt=""></a>
+                   <span>
+                       <a href="index.php?m=index&f=index&a=author&uid={$data[0]['uid']}"}>{$data[0]['uname']}</a>
+                   </span>
+                   {if $self}
+                       {if $atstatus}
+                       <a  style="background:#b1b0b0;padding:6px 14px;border-radius: 30px;line-height: 40px;cursor: pointer;" class="guanzhuBox"   uid1="{$uid1}">
+                           <span class="guanzhu" style="font-size:18px;letter-spacing: 1px;
+                           color: #fff;">已关注</span>
+                           <span class="iconfont icon-guanzhu1"></span>
+                       </a>
+                       {else}
+                       <a  style="background: #ea6f5a;padding:6px 14px;border-radius: 30px;line-height: 40px;cursor: pointer;" class="guanzhuBox"   uid1="{$uid1}">
+                           <span class="guanzhu" style="font-size:18px;letter-spacing: 1px;
+                           color: #fff;">关注</span>
+                           <span class="iconfont icon-guanzhu1"></span>
+                       </a>
+                       {/if}
+                   {else}
+                   <a  style="display:inline-block;background:#b1b0b0;width:108px;height:34px;border-radius: 30px;opacity: 0" uid1="{$uid1}" class="guanzhuBox"></a>
+                   {/if}
+               </div>
+               <div class="content">
+                   {if {$data[0]['conthumb']}}
+                   <div class="cimg" style="background-image: url('{$data[0]['conthumb']}');"></div>
+                   {/if}
+                   <div class="Con">
+                       {$data[0]['content']}
+                   </div>
+                </div>
+           </div>
+           <div class="cbottom">
+               <!--点赞，分享-->
+               <div class="clike">
+                   <div class="givelike" uid1="{$uid1}">
+                       <span class="iconfont icon-dianzan" style="cursor: pointer"
+                             glikeflag="{$glikeflag}" indexuname="{$indexuname}"></span>
+                       <span>{$glikeNum}</span>
+                   </div>
+                   <div class="givelike" uid1="{$uid1}">
+                       <span class="iconfont icon-shoucangC"  style="cursor: pointer"
+                             storeflag="{$storeflag}" indexuname="{$indexuname}"></span>
+                       <span>{$storeNum}</span>
+                   </div>
+                   <div class="share">
+                       <div>
+                           <a class="jiathis_button_tools_1">
+                               <img src="{IMG_URL}/qq.png" alt="">
+                           </a>
+                           <a class="jiathis_button_weixin">
+                               <img src="{IMG_URL}/weixin.png" alt="">
+                           </a>
+                           <a class="jiathis_button_tsina">
+                               <img src="{IMG_URL}/weibo.png" alt="">
+                           </a>
+                           <a class="jiathis_button_qzone">
+                               <img src="{IMG_URL}/qqkj.png" alt="">
+                           </a>
+                       </div>
+                       <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+
+                   </div>
+               </div>
+               <!--评论-->
+               <form class="commentaries">
+                   <span class="crest">剩余<span>200</span>个字</span>
+                   {if $indexuname}
+                   {if $list['uphoto']}
+                   <a href="index.php?m=index&f=index&a=author&uid={$list['uid']}">
+                       <div class="authorimg"
+                            style="background-image: url('{$data[0]["uphoto"]}')" ></div>
+                   </a>
+                   {else}
+                   <a href="index.php?m=index&f=index&a=author&uid={$list['uid']}">
+                       <div class="authorimg"
+                            style="background-image: url('{IMG_URL}/headimg.png')" >
+                       </div>
+                   </a>
+                   {/if}
+                   <textarea placeholder="写下你的评论..." maxlength="200" class="textareaA"></textarea>
+                   <div class="button">
+                       <button type="button">发送</button>
+                       <button type="reset">重置</button>
+                   </div>
+                   {else}
+                   <a href="index.php?m=index&f=login&a=init">
+                       <div class="authorimg"
+                            style="background-image: url('{IMG_URL}/headimg.png')" >
+                       </div>
+                   </a>
+                   <a href="index.php?m=index&f=login&a=init" style="display:inline-block;position:absolute; top:32%;left:30%;cursor: pointer;border-radius: 30px;background: #ea6f5a;color:#fff;padding:8px 16px;letter-spacing: 2px;">请登录</a>
+                   <textarea placeholder="写下你的评论..." maxlength="200" class="textareaA" disabled></textarea>
+                   <div class="button">
+                       <button type="button" disabled>发送</button>
+                       <button type="reset" disabled>重置</button>
+                   </div>
+                   {/if}
+               </form>
+           <!--留言内容区-->
+           <div class="commentBOX">
+
+           </div>
+           </div>
+       </main>
+   </section>
+   <!--content结束-->
+
+   <!--footer开始-->
+    <footer>
+       <main>
+           <p>
+               ©2016-2017 山西朔州爱因特有限公司 / 简书 / 晋ICP备11018329号-5 / 晋公网安备31010402002252号
+           </p>
+           <p>晋公网安备31010402002252号 / 举报电话：021-34770013</p>
+       </main>
+   </footer>
+   <!--footer结束-->
+</body>
+</html>

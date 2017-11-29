@@ -1,0 +1,83 @@
+.galleryshow{
+    position:fixed;
+    background:rgba(0, 0, 0, 0.7);
+    top:0;
+    left:0;
+    z-index:99999;
+    width:100%;
+    height:100%;
+    display: none;
+}
+.galleryshow .show{
+    width:644px;
+    height:430px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#fff;
+    border-radius:4px;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    margin:auto;
+}
+.galleryshow img{
+    width:636px;
+    height:422px;
+    position:absolute;
+    top:4px;
+    left:4px;
+}
+.galleryshow .iconfont{
+    font-size:40px;
+    color:#fff;
+    font-weight:lighter;
+    cursor:pointer;
+}
+.icon-zuoyoujiantouicon-defuben1{
+    position:absolute;
+    top:50%;
+    left:20px;
+    cursor:pointer;
+}
+.icon-zuoyoujiantouicon-defuben{
+    position:absolute;
+    top:50%;
+    right:20px;
+    cursor:pointer;
+}
+.galleryshow .icon-close1{
+    font-size:34px;
+    position:absolute;
+    top:30px;
+    right:30px;
+    cursor:pointer;
+}
+.setinterval{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    border:2px solid #fff;
+    position:absolute;
+    bottom:28px;
+    left:46%;
+    background:url('../img/6.jpg') no-repeat center center/cover;
+    cursor:pointer;
+}
+.galleryshow .icon-icdownloadmd{
+    font-size:28px;
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    cursor:pointer;
+}
+.galleryshow .gallerypages{
+    font-size:16px;
+    position:absolute;
+    top:16px;
+    left:50%;
+    color:#fff;
+    font-family:'微软雅黑';
+}

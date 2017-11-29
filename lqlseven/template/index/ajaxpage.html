@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="{JS_URL}/jquery-3.2.1.js"></script>
+    <title>鼠标下滑加载</title>
+    <style>
+        ul{
+            background: #fcfcfd;
+        }
+        li{
+            line-height:180px;
+            font-size:20px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        {foreach $list as $v}
+        <li>
+            {$v['cname']}
+        </li>
+        {/foreach}
+    </ul>
+</body>
+<script>
+    $(function () {
+        var num=0;
+        var flag=true;
+        $(window).on('scroll',function () {
+            //文档的高度
+//            console.log($('ul').outerHeight());
+            //console.log($(document.body).height());
+           //浏览器高度
+//            console.log($(this).height())
+            if($(this).scrollTop()>=$('ul').outerHeight()-$(this).height()){
+                if(!flag){
+                    return;
+                }
+                flag=false;
+                num++;
+                $.ajax({
+                    url:'index.php?m=index&f=ajaxpage&a=ajax',
+                    data:{ page:num },
+                    dataType:'json',
+                    type:'get',
+                    success:function (e) {
+                        for(let i=0;i<e.length;i++){
+                            //创建li
+                            $('<li>'+e[i].cname+'</li>').appendTo('ul');
+                        }
+                        flag=true;
+                    }
+
+                })
+            }
+        })
+    })
+</script>
+</html>

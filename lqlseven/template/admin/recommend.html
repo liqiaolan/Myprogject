@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>推荐位</title>
+    <script src="{JS_URL}/jquery-3.2.1.js"></script>
+    <style>
+        table{
+            width:300px;
+            height:auto;
+            border-collapse: collapse;
+            font-size:14px;
+        }
+        tr,th,td{
+            border:1px solid #ddd;
+            color:#777;
+            padding:4px 6px;
+        }
+        .main input{
+            width:14px;
+            height:14px;
+            vertical-align: middle;
+        }
+        .main button{
+            border:none;
+            padding:4px 10px;
+            color:#fff;
+            border-radius: 4px;
+            outline:none;
+            cursor: pointer;
+        }
+        .main{
+            margin-top:30px;
+            margin-left:30px;
+        }
+        .add button{
+            border:none;
+            padding:6px 18px;
+            color:#fff;
+            border-radius: 4px;
+            outline:none;
+            cursor: pointer;
+            background:#708fff;
+            font-size:18px;
+        }
+        .add{
+            margin-top:50px;
+            margin-left:50px;
+            color:#333;
+            font-size:18px;
+        }
+        .add>label{
+            line-height: 30px;
+        }
+        .add input{
+            border:1px solid #888;
+            height:30px;
+            border-radius: 4px;
+            margin-left:20px;
+            outline:none;
+            padding-left:10px;
+        }
+
+    </style>
+</head>
+<body>
+   <form action="index.php?m=admin&f=recommend&a=delrecommend" class="main" METHOD="post">
+        <table>
+            <tbody>
+                <tr bgcolor="#f0f0f0" >
+                    <td colspan="1" align="center" style="border-right:1px solid #f0f0f0;color:#333;">选择</td>
+                    <td colspan="2" align="right" >
+                        <button type="button" style="background:#708fff;margin-right:20px;">添加</button>
+                        <button type="submit" style="background: #ea6f5a;">批量删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th><input type="checkbox" id="checkboxAll" name="all" value="all"></th>
+                    <th>推荐ID</th>
+                    <th>推荐名</th>
+                </tr>
+                {foreach $lists as $v}
+                <tr>
+                    <th><input type="checkbox" name="rid[]"  value="{$v['rid']}"></th>
+                    <th>{$v['rid']}</th>
+                    <th class="edit" rid="{$v['rid']}">{$v['rname']}</th>
+                </tr>
+                {/foreach}
+            </tbody>
+        </table>
+   </form>
+   <form action="index.php?m=admin&f=recommend&a=addrecommend"  method="post"
+         class="add" style="display: none">
+       <label for="">
+           <span>推荐位名称</span>
+           <input type="text" name="rname" required>
+       </label>
+       <br>
+       <br>
+       <button type="submit">添加</button>
+   </form>
+</body>
+<script>
+    //显示添加
+    $('button[type=button]').on('click',function () {
+        $('.main').css({ display:'none' });
+        $('.add').css({ display:'block' });
+    })
+    //编辑
+    $('.edit').on('dblclick',function () {
+        var oldval=$(this).text();
+        $(this).attr('contenteditable',true).focus();
+        $(this).on('blur',function () {
+            var newval=$(this).text();
+            var rid=$(this).attr('rid');
+            if(oldval!=newval){
+                $.ajax({
+                    url:'index.php?m=admin&f=recommend&a=editrecommend',
+                    type:'post',
+                    data:{
+                        rname:newval,
+                        rid:rid,
+                    },
+                    success:function (e) {
+                        if(e=='ok'){
+                            location.href='index.php?m=admin&f=recommend&a=editshow';
+                        }
+                    }
+                })
+            }
+        })
+    })
+    //删除
+    var checkboxs=$(':checkbox:not("#checkboxAll")');
+    $('#checkboxAll').on('click',function () {
+         for(let i=0;i<checkboxs.length;i++){
+             checkboxs[i].checked=this.checked;
+         }
+    })
+    checkboxs.on('click',function () {
+        var ischeckAll=true;
+        for(let i=0;i<checkboxs.length;i++) {
+            if (!checkboxs[i].checked) {
+                ischeckAll = false;
+                break;
+            }
+        }
+        $('#checkboxAll')[0].checked=ischeckAll;
+
+    })
+</script>
+</html>

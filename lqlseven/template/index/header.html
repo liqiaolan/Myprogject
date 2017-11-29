@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--header开始-->
+    <header>
+        <main>
+            <form action="" class="searchForm">
+                <div class="index">
+                    <a href="index.php?m=index&f=index&a=init" style="display: block;">
+                        <img src="{IMG_URL}/logo.png" alt="图片加载错误"
+                             style="width:40px;height:40px;border-radius: 50%;font-size:10px;">
+                    </a>
+                </div>
+                <div class="searchBox">
+                    <input type="text" placeholder="搜索" class="search">
+                    <span class="iconfont icon-icon_search"></span>
+                </div>
+            </form>
+            <div class="flogo">
+                {if $indexuname}
+                <div class="login"><a href="index.php?m=index&f=attention&a=gzmore">关注</a></div>
+                <div class="login"><a href="index.php?m=index&f=index&a=categoryMore">话题</a></div>
+                <!--登录成功后头像-->
+                <div class="self"><a href="index.php?m=index&f=article&a=articaleCheck">写点什么吧</a></div>
+                <div class="loginuser">
+                    <img src="{$selfdata['uphoto']}" alt="">
+                    <div class="iconfont icon-arrLeft-fill"></div>
+                    <ul>
+                        <li>
+                            <a href="index.php?m=index&f=personalCenter&a=init">
+                                <span class="iconfont icon-gerenzhongxin_zhuye_gerenziliao"></span>
+                                <span>我的主页</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.php?m=index&f=myarticle&a=myarticale">
+                                <span class="iconfont icon-gerenzhongxin_zhuye_gerenziliao"></span>
+                                <span>我的文章</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.php?m=index&f=login&a=loginout">
+                                <span class="iconfont icon-tuichu-"></span>
+                                <span>我要退出</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                {else}
+                <div class="login"><a href="index.php?m=index&f=login&a=init" style="color:#ea6f5a;">登录</a></div>
+                <div class="login"><a href="index.php?m=index&f=attention&a=gzmore">关注</a></div>
+                <div class="login"><a href="index.php?m=index&f=index&a=categoryMore">话题</a></div>
+                <div class="register"><a href="index.php?m=index&f=register&a=init">注册</a></div>
+                <div class="self"><a href="index.php?m=index&f=article&a=articaleCheck">写点什么吧</a></div>
+                {/if}
+
+            </div>
+        </main>
+    </header>
+    <!--header结束-->
+</body>
+</html>

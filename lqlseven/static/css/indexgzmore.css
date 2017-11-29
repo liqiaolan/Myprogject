@@ -1,0 +1,166 @@
+@import "personal.css";
+@import "indexheader.css";
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+}
+main{
+    width:1140px;
+    height: auto;
+    margin:0 auto;
+}
+.gzmore{
+    margin-top:98px;
+}
+.gzmore>main{
+    display: flex;
+    justify-content: space-between;
+}
+.left{
+    width: 70%;
+    height:auto;
+}
+.right{
+    width: 30%;
+    height:auto;
+    box-sizing: border-box;
+    padding-left:30px;
+}
+.gemoreTop{
+    font-size:26px;
+    color:#777;
+    width:100%;
+    margin-bottom: 30px;
+}
+.authorL{
+    width:80%;
+    height:auto;
+    overflow: hidden;
+    padding-right:10px;
+    margin-top:20px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.authorL>li{
+    list-style:none;
+    float:left;
+    color:#ea6f5a;
+    height:50px;
+    box-sizing: border-box;
+}
+.authorL>li a{
+    color:#888;
+}
+.authorL>li:first-child img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background-repeat:no-repeat;
+    background-size:cover;
+    bakground-position:center center;
+    font-size:10px;
+}
+.authorL>li:nth-child(2){
+    font-size:14px;
+    margin-right:300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.authorL>li:last-child{
+    width:118px;
+    height:34px;
+    cursor: pointer;
+    text-align:center;
+    line-height: 34px;
+    border-radius: 30px;
+}
+.authorL .icon-guanzhu1{
+    font-size:18px;
+    color:#fff;
+}
+.acontent{
+    display: flex;
+    font-size:14px;
+    color:#666;
+}
+.acontent>p{
+    margin-left:10px;
+}
+.acontent>p:first-child{
+    margin-left:0px;
+}
+/*右边*/
+.right>p{
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #969696;
+    line-height: 26px;
+}
+.right>p:nth-last-of-type(2){
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+}
+.right>p:last-of-type{
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+}
+.rightMiddle{
+    margin-top:30px;
+}
+.rightMiddle>span{
+    display:inline-block;
+    font-size:18px;
+    color:#969696;
+    vertical-align: top;
+    margin-left:4px;
+}
+.rightMiddle img{
+    width:40px;
+    height:40px;
+    margin-right:14px;
+}
+/*加载更多*/
+.more{
+    width:80%;
+    height:auto;
+}
+.more>main{
+    width:100%;
+    margin-top:20px;
+}
+.more a{
+    display: block;
+    width:100%;
+    height:40px;
+    text-align:center;
+    line-height: 40px;
+    background:#f7f7f7;
+    border-radius: 30px;
+    color:#4a4949;
+}
+.more div{
+    width:100%;
+    height:100%;
+    font-size:18px;
+}
+/*footer开始*/
+footer{
+    width:70%;
+    margin:60px auto 60px;
+}
+footer p{
+    width:80%;
+    height:auto;
+    margin-top:20px;
+    font-size:14px;
+    color:#888;
+    text-align: center;
+}
+/*footer结束*/

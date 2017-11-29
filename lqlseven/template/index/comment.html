@@ -1,0 +1,59 @@
+ {foreach $data as $v}
+     <div class="clycontent" mid="{$v['mid']}">
+        <div class="pinglun">
+            <div class="clycauthor">
+                <p style="background-image: url('{IMG_URL}/banner1.jpg')"></p>
+                <p>
+                    <span>{$v['uname']}</span>
+                    <span>{$v['mdate']}</span>
+                </p>
+            </div>
+            <div class="clycon">
+                <span>{$v['mcon']}</span>
+                <span style="float:right;padding-right:10px;cursor: pointer" id="mstatus"> 举报</span>
+            </div>
+            <div class="clylike">
+                <span class="iconfont icon-dianzan"></span>
+                <span class="iconfont icon-huifu showhuifu" indexuname="{$indexuname}"></span>
+            </div>
+        </div>
+        <div class="huifu">
+            {if $v['son']}
+               {foreach $v['son'] as $value}
+                    <div class="huifuBOX">
+                        <div class="clyhuifu">
+                            <div class="huifuT">{$value['uname']}</div>
+                            <div class="huifuC">{$value['mcon']}</div>
+                            <div class="huifuTime">
+                                <span>{$value['mdate']}</span>
+                                <span class="iconfont icon-huifu showhuifu" huifu="{$value['uname']}" id="showhuifu"  uid2="{$value['uid1']}" indexuname="{$indexuname}"></span>
+                            </div>
+                        </div>
+                        <div style="border:0.5px dashed #ccc;margin:8px 0;"></div>
+                    </div>
+               {/foreach}
+            {/if}
+             <div class="addComment">
+                 <span class="showhuifu" style="color:#777;" indexuname="{$indexuname}">添加新评论</span>
+                 <span class="cancelhuifu" style="color:#777;cursor: pointer;margin-left:40px;">取消</span>
+                 <div class="Messagehid">
+                     <textarea placeholder="写下你的评论..." maxlength="200" class="textareaB"></textarea>
+                     <div style="display: flex;justify-content: space-between">
+                <span class="iconfont icon-xiaolian" style="font-size:26px;color:#777;">
+                    <span style="font-size: 16px;vertical-align: middle;padding-left:20px;">留下您足迹吧</span>
+                </span>
+                         <div>
+                             <span class="cancelhuifu" style="display: inline-block;padding: 6px 14px;background:#e41635;color:#fff;border-radius:2px;font-weight: 500;cursor: pointer;margin-right:50px;">取消</span>
+                             <span class="addhuifu" style="display: inline-block;padding: 6px 14px;background:#09bb07;color:#fff;border-radius:2px;font-weight: 500;cursor: pointer">发送</span>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+    </div>
+{/foreach}
+ <!--评论分页-->
+ <div class="commentpage">
+     <a href="javascript:;" class="prevmessage" url="index.php?m=index&f=comment&a=pages&pages={$pages-1}&conid={$conid}">上一页</a>
+     <a href="javascript:;"  class="nextmessage"  url="index.php?m=index&f=comment&a=pages&pages={$pages+1}&conid={$conid}">下一页</a>
+ </div>

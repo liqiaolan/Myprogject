@@ -1,0 +1,76 @@
+@import "indexheader.css";
+@import "personal.css";
+@import "personalCenter.css";
+*{
+    text-decoration: none;
+}
+/*对影响的样式进行修改*/
+.loginuser>ul{
+    top:40px;
+}
+html,body{
+    width:100%;
+    height:100%;
+}
+main{
+    width:1140px;
+    height:auto;
+    margin:0 auto;
+}
+.container{
+    width:100%;
+    height:100%;
+    padding-top:58px;
+    box-shadow:0px 2px 5px 1px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.row{
+    width: 100%;
+    height:100%;
+}
+.left{
+    padding-top:30px;
+    width:100%;
+    height:100%;
+    border-right:1px solid #ccc;
+    font-size:18px;
+}
+.left li{
+    cursor: pointer;
+    line-height:34px;
+}
+.left ul{
+    padding-left:14px;
+    margin-left:4px;
+}
+.left a:hover{
+    text-decoration: none;
+}
+/*图标*/
+.glyphicon-tag{
+    font-size:16px;
+    color:#ea6f5a;
+    padding-right:10px;
+    vertical-align:middle;
+}
+.glyphicon-tags{
+    font-size:14px;
+    color:#ea6f5a;
+    padding-right:10px;
+    vertical-align:middle;
+}
+.right{
+    padding-top:30px;
+    height:100%;
+    width: 100%;
+}
+iframe{
+    width:100%;
+    height:100%;
+}
+/*子分类初始不显示*/
+.left ul>ul{
+    height:0;
+    overflow: hidden;
+}

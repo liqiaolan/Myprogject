@@ -1,0 +1,388 @@
+@import "personal.css";
+@import "indexheader.css";
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 微软雅黑;
+}
+/*header开始*/
+main{
+    width:1140px;
+    height:auto;
+    margin:0 auto;
+}
+/*提示信息框*/
+.notice{
+    width:300px;
+    height:50px;
+    position:fixed;
+    top:78px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:1000;
+    text-align:center;
+    line-height: 50px;
+    color:#e41635;
+    font-size:20px;
+    border:1px solid #e41635;
+    border-radius:6px;
+    background: #fff;
+    display:none;
+}
+.success{
+    width:300px;
+    height:50px;
+    position:fixed;
+    top:78px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:1001;
+    text-align:center;
+    line-height: 50px;
+    color:#09bb07;
+    font-size:20px;
+    border:1px solid #09bb07;
+    border-radius:6px;
+    background: #fff;
+    display:none;
+}
+/*con开始*/
+.con{
+    width:100%;
+    height:auto;
+    margin-top:50px;
+}
+.con>main{
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.left{
+    width:80%;
+    height:auto;
+}
+.conhead{
+    display: flex;
+    justify-content: space-between;
+}
+.left .title{
+    width:100%;
+    text-align:left;
+    padding:40px 0 30px 0;
+    font-size:30px;
+    color:#000;
+}
+.author{
+    width:100%;
+    height: 40px;
+    line-height: 40px;
+}
+.author>a>img{
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+   vertical-align:middle;
+    margin-right: 6px;
+}
+.author>span{
+    margin-right: 80px;
+}
+.author a{
+    color:#999;
+}
+.author .icon-guanzhu1{
+    font-size:18px;
+    color:#fff;
+    font-weight: bolder;
+}
+/*con结束*/
+/*content开始*/
+.content{
+    display: inline-block;
+    word-wrap:break-word;
+    width: 100%;
+    height:auto;
+    margin-top:30px;
+}
+.content>.cimg{
+    width:100%;
+    height:300px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    margin-bottom:30px;
+}
+.content>.Con{
+    width: 100%;
+    display: inline-block;
+    font-size:16px;
+    color:#2f2f2f;
+    line-height: 40px;
+    text-indent:30px;
+    word-wrap: break-word;
+}
+.Con>p{
+    margin-bottom:20px;
+}
+
+/*分享区*/
+.cbottom{
+    width:80%;
+    height:auto;
+    text-align: center;
+    margin-top:60px;
+}
+.cbottom>.clike{
+    width:100%;
+    height:auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:30px;
+}
+.givelike .icon-dianzan{
+    font-size:40px;
+    color:#fff;
+    vertical-align:middle;
+    margin-right:10px;
+}
+.givelike .icon-shoucangC{
+    font-size:40px;
+    color:#fff;
+    vertical-align:middle;
+    margin-right:10px;
+}
+.givelike:nth-child(2){
+    margin-right:400px;
+}
+.givelike>span:last-child{
+    color:#e41635;
+    font-size:18px;
+    vertical-align:middle;
+}
+.share img{
+    width:40px;
+    height:40px;
+}
+.share a{
+    display: inline-block;
+    margin-left:30px;
+    cursor:pointer;
+}
+
+/*评论区*/
+.commentaries{
+    width:auto;
+    height: auto;
+    position:relative;
+}
+.authorimg{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.commentaries{
+    display: flex;
+    justify-content: space-between;
+}
+.commentaries>textarea{
+    width:80%;
+    height: 80px;
+    resize: none;
+    border:1px solid #ccc;
+    padding:10px 10px;
+    outline:none;
+}
+.commentaries>.button{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+button[type=button]{
+    width:auto;
+    height:auto;
+    padding:6px 14px;
+    border:none;
+    background:#09bb07;
+    font-size:16px;
+    color:#fff;
+    font-weight:500;
+    border-radius:2px;
+    outline:none;
+    cursor: pointer;
+}
+button[type=reset]{
+    width:auto;
+    height:auto;
+    padding:6px 14px;
+    border:none;
+    background:#e41635;
+    font-size:16px;
+    color:#fff;
+    border-radius:2px;
+    outline:none;
+    cursor: pointer;
+}
+.commentaries .crest{
+    position:absolute;
+    top:74%;
+    left:80%;
+    font-size:14px;
+    color:#999;
+}
+.crest>span{
+    color:#444;
+}
+/*留言区*/
+.cliuyan{
+    width:100%;
+    height:auto;
+    display: flex;
+    justify-content: space-between;
+    margin:30px 0 0 0;
+}
+.cliuyanT{
+    font-size:18px;
+    color:#333;
+    font-weight: 900;
+}
+.sequencing{
+    font-size:14px;
+    color:#666;
+    display: flex;
+}
+.sequencing>div{
+    margin-left:30px;
+}
+/*留言内容区*/
+.clycontent{
+    width:100%;
+    height:auto;
+    padding-bottom:20px;
+    border-bottom:0.4px solid #777;
+    margin-top:30px;
+}
+.clycauthor{
+    display: flex;
+    align-items: center;
+}
+.clycauthor>p:first-child{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center center;
+    margin-right:20px;
+}
+.clycauthor>p>span{
+    display: block;
+}
+.clycauthor>p>span:first-child{
+    font-size:16px;
+    color:#333;
+}
+.clycauthor>p>span:last-child{
+    font-size:14px;
+    color:#888;
+}
+.clycon{
+    text-align:left;
+    font-size:16px;
+    color:#444;
+    margin:18px 0px;
+}
+.clylike{
+    text-align: left;
+}
+.clylike>span{
+    color:#777;
+    margin-right: 30px;
+    cursor: pointer;
+}
+/*回复区*/
+.huifu{
+    margin-left:20px;
+    border-left: 2px solid #ccc;
+    padding-left:14px;
+}
+.clyhuifu{
+    width:auto;
+    height:auto;
+    margin-top:20px;
+}
+.huifuT{
+     font-size:14px;
+     color:#e41635;
+    text-align: left;
+ }
+.huifuC{
+    font-size:14px;
+    color:#777;
+    text-align: left;
+}
+.huifuTime{
+    color:#777;
+    font-size:14px;
+    text-align: left;
+    margin-top:10px;
+}
+.huifuTime>span{
+    margin-right:20px;
+}
+.addComment{
+    margin-top:8px;
+    text-align: left;
+}
+.Messagehid{
+    height:0;
+    overflow: hidden;
+}
+.textareaB{
+    display: block;
+    margin:8px 0;
+    width:100%;
+    height: 100px;
+    resize: none;
+    border:1px solid #ccc;
+    padding:10px 10px;
+    outline:none;
+    box-sizing: border-box;
+}
+.showhuifu{
+    cursor: pointer;
+}
+/*评论的分页*/
+.commentpage{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top:20px;
+}
+.commentpage>a{
+    font-size:18px;
+    font-family:'微软雅黑';
+    color:#ea6f5a;
+    font-weight:600;
+}
+/*content结束*/
+/*footer开始*/
+footer{
+    width:70%;
+    margin:60px auto 60px;
+}
+footer p{
+    width:80%;
+    height:auto;
+    margin-top:20px;
+    font-size:14px;
+    color:#888;
+    text-align: center;
+}
+/*footer结束*/
